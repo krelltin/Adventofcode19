@@ -1,0 +1,39 @@
+import sys
+import math
+#open input file with list of module weight
+input_file = open("input/module_weight.txt", "r")
+
+#declare a list of integers to save module weights
+module_weights_list = list()
+
+#each line in the file corresponds to the weight of one module
+for line in input_file:
+    #convert the line which is a string into an integer and save as the module weight
+    module_weight_val = int(line)
+    print(module_weight_val)
+    print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+    #place all the integers one by one at the end of the list of all module weights, value
+    module_weights_list.append(module_weight_val)
+
+
+#Now all the module weights are saved in memory in the form of a list
+#We can now calculate the fule needed
+fuelcal_list = list()
+
+#The fuel formula is fuel = module_weight / 3 - 2
+for mass in module_weights_list:
+    fuelcal = mass / 3 - 2
+    print(fuelcal)
+
+    #to have all calculated values again in one list, listed in the right order (.append)
+    fuelcal_list.append(fuelcal)
+#For each its module's weight in the module_weights_list, calculate the fuel need
+
+
+fuelsum = sum(fuelcal_list)
+print (fuelsum)
+
+
+#calculate fuel itteration for fuel, #while loop
+for fuelrequ in fuelcal:
+    fuelrequ = mass / 3 - 2
